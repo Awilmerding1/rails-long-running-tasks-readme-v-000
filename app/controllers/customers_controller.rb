@@ -1,9 +1,8 @@
 class CustomersController < ApplicationController
   require 'csv'
-  
-   def index
+  def index
       @customers = Customer.all
-    end
+  end
    
     def upload
       CSV.foreach(params[:leads].path, headers: true) do |lead|
